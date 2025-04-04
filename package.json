@@ -1,0 +1,22 @@
+{
+  "name": "chessgpt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sp4r1ng/chessgpt.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sp4r1ng/chessgpt/issues"
+  },
+  "homepage": "https://github.com/sp4r1ng/chessgpt#readme",
+  "dependencies": {
+    "stockfish.wasm": "^0.10.0"
+  }
+}

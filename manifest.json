@@ -1,0 +1,23 @@
+{
+  "manifest_version": 2,
+  "name": "ChessGPT",
+  "version": "1.1",
+  "icons": { "16": "icon.png",
+  "48": "icon.png",
+ "128": "icon.png" },
+ "browser_specific_settings": {
+  "gecko": {
+    "id": "chessgpt@gmail.com"
+  }
+},
+  "description": "",
+  "content_scripts": [
+    {
+      "js": ["scripts/main.js"],
+      "matches": [
+        "https://www.chess.com/*",
+        "https://chess.com/*"
+      ]
+    }
+  ]
+}
