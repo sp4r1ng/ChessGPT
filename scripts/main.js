@@ -5,13 +5,13 @@ function main()
     const elementName = boardElement.tagName;
     let chessboard = document.querySelector(elementName);
     if(chessboard == null || !chessboard){
-        return {status:"false",error:"Cannot start chess cheat service. Please ensure you are in a game before attempting to start the service."}
+        return {status:"false",error:"Cannot start chessgpt service. Please check if you are on the chessboard page."}
     }
-    var player_colour = prompt("Are you playing as white or black?")
-    while(player_colour != "white" && player_colour !="black"){
-        player_colour = prompt("Are you playing as white or black?")
+    var player_color = prompt("Are you playing as white or black?")
+    while(player_color != "white" && player_color !="black"){
+        player_color = prompt("Are you playing as white or black?")
     }
-    player_colour = player_colour.split("")[0]
+    player_color = player_color.split("")[0]
     function getFenString()
     {
         let fen_string = ""
@@ -51,7 +51,7 @@ function main()
         return fen_string
     }
     let fen_string = getFenString()
-    fen_string += ` ${player_colour}`
+    fen_string += ` ${player_color}`
     console.log(fen_string)
     let depth="";
     const userAgent = navigator.userAgent.toLowerCase();
@@ -64,10 +64,9 @@ function main()
     engine.postMessage(`position fen ${fen_string}`)
     engine.postMessage('go wtime 300000 btime 300000 winc 2000 binc 2000');
     engine.postMessage("go depth ${depth}")
-    //listen for when moves are made 
   var getPlays = setInterval(()=>{
         let new_fen_string = getFenString()
-        new_fen_string += ` ${player_colour}`
+        new_fen_string += ` ${player_color}`
         if(new_fen_string != fen_string){
             fen_string = new_fen_string
             engine.postMessage(`position fen ${fen_string}`)
